@@ -1,0 +1,385 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finora - Smart Finance</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f5f7fb;
+      color: #172033;
+    }
+
+    header {
+      background: #ffffff;
+      padding: 18px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      color: #1769ff;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      margin-left: 25px;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: #1769ff;
+    }
+
+    .hero {
+      min-height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 70px 8%;
+      background: linear-gradient(135deg, #eef5ff, #ffffff);
+    }
+
+    .hero-text {
+      max-width: 600px;
+    }
+
+    .hero h1 {
+      font-size: 52px;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: #1769ff;
+    }
+
+    .hero p {
+      font-size: 19px;
+      color: #667085;
+      line-height: 1.7;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 25px;
+      background: #1769ff;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background: #0d55d6;
+    }
+
+    .finance-card {
+      width: 330px;
+      background: white;
+      padding: 30px;
+      border-radius: 18px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    }
+
+    .finance-card h2 {
+      margin-bottom: 20px;
+    }
+
+    .balance {
+      font-size: 34px;
+      font-weight: bold;
+      color: #1769ff;
+      margin-bottom: 20px;
+    }
+
+    .progress {
+      height: 10px;
+      background: #e6eaf0;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-top: 10px;
+    }
+
+    .progress div {
+      width: 70%;
+      height: 100%;
+      background: #1769ff;
+    }
+
+    .section {
+      padding: 70px 8%;
+    }
+
+    .section h2 {
+      text-align: center;
+      font-size: 35px;
+      margin-bottom: 45px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+    }
+
+    .card h3 {
+      margin-bottom: 12px;
+      color: #1769ff;
+    }
+
+    .card p {
+      color: #667085;
+      line-height: 1.6;
+    }
+
+    .calculator {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 35px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+    }
+
+    .calculator input {
+      width: 100%;
+      padding: 13px;
+      margin: 10px 0 18px;
+      border: 1px solid #ddd;
+      border-radius: 7px;
+      font-size: 16px;
+    }
+
+    .calculator button {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      background: #1769ff;
+      color: white;
+      border-radius: 7px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    footer {
+      background: #172033;
+      color: white;
+      text-align: center;
+      padding: 30px;
+    }
+
+    @media (max-width: 800px) {
+      .hero {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">Finora</div>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#calculator">Calculator</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+
+    <div class="hero-text">
+      <h1>Make Your Money <span>Smarter.</span></h1>
+
+      <p>
+        Finora helps you understand money, plan your savings,
+        manage your budget and build better financial habits.
+      </p>
+
+      <a href="#calculator" class="btn">Try Calculator</a>
+    </div>
+
+    <div class="finance-card">
+      <h2>Monthly Savings</h2>
+
+      <div class="balance">₹25,000</div>
+
+      <p>Goal progress</p>
+
+      <div class="progress">
+        <div></div>
+      </div>
+
+      <br>
+
+      <p>70% of your monthly savings goal completed.</p>
+    </div>
+
+  </section>
+
+
+  <section class="section" id="services">
+
+    <h2>What Finora Offers</h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>💰 Budget Planning</h3>
+        <p>
+          Plan your monthly income and expenses
+          to understand where your money goes.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>📈 Investment Learning</h3>
+        <p>
+          Learn basic concepts about investing,
+          risk and long-term wealth building.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>🎯 Savings Goals</h3>
+        <p>
+          Set financial goals and track your
+          progress toward achieving them.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="section" id="calculator">
+
+    <h2>Simple Savings Calculator</h2>
+
+    <div class="calculator">
+
+      <label>Monthly Income (₹)</label>
+      <input type="number" id="income" placeholder="50000">
+
+      <label>Monthly Expenses (₹)</label>
+      <input type="number" id="expense" placeholder="30000">
+
+      <button onclick="calculateSavings()">
+        Calculate Savings
+      </button>
+
+      <div id="result"></div>
+
+    </div>
+
+  </section>
+
+
+  <section class="section" id="about">
+
+    <h2>About Finora</h2>
+
+    <div class="card">
+      <p>
+        Finora is a simple financial education platform
+        designed to help people understand budgeting,
+        saving and personal finance.
+      </p>
+    </div>
+
+  </section>
+
+
+  <footer>
+    <p>© 2026 Finora. All rights reserved.</p>
+    <p>Financial information is for educational purposes only.</p>
+  </footer>
+
+
+  <script>
+
+    function calculateSavings() {
+
+      let income =
+        Number(document.getElementById("income").value);
+
+      let expense =
+        Number(document.getElementById("expense").value);
+
+      let savings = income - expense;
+
+      let result =
+        document.getElementById("result");
+
+      if (!income || !expense) {
+        result.innerHTML =
+          "Please enter your income and expenses.";
+        return;
+      }
+
+      if (savings >= 0) {
+        result.innerHTML =
+          "Your estimated monthly savings: ₹" +
+          savings.toLocaleString("en-IN");
+      } else {
+        result.innerHTML =
+          "Your expenses are higher than your income.";
+      }
+    }
+
+  </script>
+
+</body>
+</html>
+```
